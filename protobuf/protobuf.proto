@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package helloGeneric;
+
+import "google/protobuf/struct.proto";
+
+service GenericDo {
+  rpc DoSomething (Request) returns (Reply) {}
+}
+
+message Request {
+  google.protobuf.Value arg = 1;
+}
+
+message Reply {
+  google.protobuf.Value ret = 1;
+}
